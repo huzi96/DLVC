@@ -42,10 +42,12 @@
 #include "TComConvNet.h"
 #include <string>
 
-#if USE_TENSORFLOW
+#if USE_TENSORFLOW || USE_TENSORFLOW_ALTER
 #include "TensorFlowHeader.h"
 #include "TComTF.h"
 #endif
+
+
 
 #if CNN_BASED_INLOOP_FILTER
 
@@ -241,7 +243,7 @@ Void TComSplitImg::postProcess(TComPic* pcPic, TComPicYuv *pcPicYuvRec
   //endTime = (double)(clock() - startClock) / CLOCKS_PER_SEC;
   //printf("caffe cnn loop filter done! Time: %.3f sec.\n", endTime);
 }
-#if USE_TENSORFLOW
+#if USE_TENSORFLOW || USE_TENSORFLOW_ALTER
 Void TComSplitImg::postProcess_tf(TComPic* pcPic, TComPicYuv *pcPicYuvRec)
 {
   if (pcPicYuvRec == NULL)

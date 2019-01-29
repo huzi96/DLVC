@@ -38,7 +38,7 @@
 #ifndef __TCOMCAFFE__
 #define __TCOMCAFFE__
 #include "CommonDef.h"
-
+#include <cblas-openblas.h>
 #include <caffe/caffe.hpp>
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>

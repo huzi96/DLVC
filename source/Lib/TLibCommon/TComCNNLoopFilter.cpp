@@ -148,7 +148,7 @@ Void TComCNNLoopFilter::convNetProcess(TComPic* pDecPic)
   TComPicYuv* resYuv = pDecPic->getPicYuvRec();
   Int maxWidth = DEFAULT_INPUT_BLOCK_SIZE;
   Int maxHeight = DEFAULT_INPUT_BLOCK_SIZE;
-#if USE_TENSORFLOW
+#if USE_TENSORFLOW || USE_TENSORFLOW_ALTER
   if (DLframework == "Tensorflow")
   {
     maxWidth = 512;
@@ -166,7 +166,7 @@ Void TComCNNLoopFilter::convNetProcess(TComPic* pDecPic)
   {
     splitImg.postProcess(pDecPic, netRecYuv, DLframework);
   }
-#if USE_TENSORFLOW
+#if USE_TENSORFLOW || USE_TENSORFLOW_ALTER
   else if (DLframework == "Tensorflow")
   {
     splitImg.postProcess_tf(pDecPic, netRecYuv);

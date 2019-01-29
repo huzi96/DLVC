@@ -8,7 +8,7 @@
 #include <fstream>
 #include <utility>
 #include <vector>
-#include <eigen/Dense>
+#include <Eigen/Dense>
 
 #include "tensorflow/cc/ops/const_op.h"
 #include "tensorflow/cc/ops/image_ops.h"
@@ -53,6 +53,24 @@ public:
 	Int setenv(const char *name, const char *value, int overwrite);
 };
 
+#endif
+
+#if USE_TENSORFLOW_ALTER
+#include <set>
+#include "tensorflow/c/c_api.h"
+using namespace std;
+class TComTF
+{
+
+public:
+	TComTF();
+	virtual ~TComTF();
+	Int ReadRawTensorFromYuv(float* rawTensor, Pel* piSrc, Int inputHeight, Int inputWidth, Int iStride);
+	Int RawTensor2Yuv(Pel* piSrc, float* rawTensor, Int inputHeight, Int inputWidth, Int iStride);
+	Int setenv(const char *name, const char *value, int overwrite);
+	TF_Buffer* ReadPBFromFile(const char* file);
+	Void TFNetForward(const string graph_path, char* cGPUid, Pel* piSrc, Int inputHeight, Int inputWidth, Int iStride, string inputLayer, string outputLayer);
+};
 #endif
 
 #endif

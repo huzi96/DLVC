@@ -241,3 +241,8 @@ _Pvt_Extensions
 *.P
 *.o
 *.a
+
+# Development
+.tags*
+tests/*
+research/*

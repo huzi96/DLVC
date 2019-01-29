@@ -73,7 +73,7 @@ public:
     ,string platform = DEFAULT_DL_FRAMEWORK
 #endif
   );
-#if USE_TENSORFLOW
+#if USE_TENSORFLOW || USE_TENSORFLOW_ALTER
   Void postProcess_tf(TComPic* pcPic, TComPicYuv *pcPicYuvRec = NULL);
 #endif
   Void blockCombine(TComPic* pcPic, cv::Mat &recImg, BlockInfo subImg, std::vector<float> result);
