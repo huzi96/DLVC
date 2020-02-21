@@ -34,7 +34,7 @@ MINOR_VER		= 1
 VER				= $(MAJOR_VER).$(MINOR_VER)
 
 # defines to set
-DEFS			= -DMSYS_LINUX
+DEFS			= -DMSYS_LINUX -D_GLIBCXX_USE_CXX11_ABI=1
 
 # set objects
 OBJS          	= \
@@ -68,6 +68,14 @@ OBJS          	= \
 			$(OBJ_DIR)/TComAdaptiveLoopFilter.o \
 			$(OBJ_DIR)/TComBilateralFilter.o  \
 			$(OBJ_DIR)/TComNoiseSuppressor.o  \
+			$(OBJ_DIR)/TComConvNet.o  \
+			$(OBJ_DIR)/TComCNNLoopFilter.o \
+			$(OBJ_DIR)/TComUtils.o \
+			$(OBJ_DIR)/TComCaffe.o \
+			$(OBJ_DIR)/TComOpencv.o \
+			$(OBJ_DIR)/TComSplitImg.o \
+			$(OBJ_DIR)/TComTorch.o \
+
 
 LIBS				= -lpthread
 

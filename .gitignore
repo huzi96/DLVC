@@ -241,3 +241,13 @@ _Pvt_Extensions
 *.P
 *.o
 *.a
+
+# Testing workspace
+tests/*
+.tags*
+.*.swp
+research/*
+caffe/*
+tensorflow/*
+CUDA/*
+torch/*
